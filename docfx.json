@@ -4,7 +4,7 @@
     {
       "src": [
         {
-          "src": "../SFiIR",
+          "src": "./",
           "files": [
             "**/*.csproj"
           ]
@@ -20,7 +20,9 @@
           "**/*.{md,yml}"
         ],
         "exclude": [
-          "_site/**"
+          "_site/**", 
+          "obj/**",
+          "bin/**"
         ]
       }
     ],

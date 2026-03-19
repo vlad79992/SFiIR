@@ -1,0 +1,37 @@
+on:
+  push:
+    branches: [ main ] # Убедитесь, что это имя вашей исходной ветки (main или master)
+
+permissions:
+  pages: write
+  id-token: write
+
+jobs:
+  publish-docs:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '10.x'
+      
+      - name: Install DocFX
+        run: dotnet tool update -g docfx
+      
+      - name: Build Documentation
+        run: docfx docfx.json
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site' # Путь к папке, которую сгенерировал docfx
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
