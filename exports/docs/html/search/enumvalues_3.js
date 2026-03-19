@@ -1,8 +1,0 @@
-var searchData=
-[
-  ['process_5fadded_0',['PROCESS_ADDED',['../namespace_s_f_ii_r_1_1_modeling_1_1_statistics.html#af7d9f525efdf6636c073ce6bead619f2a62ff95719731cf2db7b31e1082b26153',1,'SFIiR.Modeling.Statistics.PROCESS_ADDED'],['../namespace_s_f_ii_r_1_1_statistics.html#ae81a48d83bc2267063189d59742bdbeba62ff95719731cf2db7b31e1082b26153',1,'SFIiR.Statistics.PROCESS_ADDED']]],
-  ['process_5fcompleted_1',['PROCESS_COMPLETED',['../namespace_s_f_ii_r_1_1_modeling_1_1_statistics.html#af7d9f525efdf6636c073ce6bead619f2a211bff06a746af259eb204ef26e10f75',1,'SFIiR.Modeling.Statistics.PROCESS_COMPLETED'],['../namespace_s_f_ii_r_1_1_statistics.html#ae81a48d83bc2267063189d59742bdbeba211bff06a746af259eb204ef26e10f75',1,'SFIiR.Statistics.PROCESS_COMPLETED']]],
-  ['process_5fexecuting_2',['PROCESS_EXECUTING',['../namespace_s_f_ii_r_1_1_modeling_1_1_statistics.html#af7d9f525efdf6636c073ce6bead619f2acea4b0d7dc15284a65c0b89ed56dff93',1,'SFIiR.Modeling.Statistics.PROCESS_EXECUTING'],['../namespace_s_f_ii_r_1_1_statistics.html#ae81a48d83bc2267063189d59742bdbebacea4b0d7dc15284a65c0b89ed56dff93',1,'SFIiR.Statistics.PROCESS_EXECUTING']]],
-  ['process_5fpreempted_3',['PROCESS_PREEMPTED',['../namespace_s_f_ii_r_1_1_modeling_1_1_statistics.html#af7d9f525efdf6636c073ce6bead619f2ae4f0085f0fc66dae3d755f491aeca337',1,'SFIiR::Modeling::Statistics']]],
-  ['process_5freturned_4',['PROCESS_RETURNED',['../namespace_s_f_ii_r_1_1_modeling_1_1_statistics.html#af7d9f525efdf6636c073ce6bead619f2ac93701b495cb9c4da72c3333bbbc9da9',1,'SFIiR.Modeling.Statistics.PROCESS_RETURNED'],['../namespace_s_f_ii_r_1_1_statistics.html#ae81a48d83bc2267063189d59742bdbebac93701b495cb9c4da72c3333bbbc9da9',1,'SFIiR.Statistics.PROCESS_RETURNED']]]
-];
