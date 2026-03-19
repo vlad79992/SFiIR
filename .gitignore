@@ -365,3 +365,6 @@ FodyWeavers.xsd
 # DocFX generated files
 _site/
 api/
+/docs
+/index.md
+/toc.yml
