@@ -1,0 +1,138 @@
+\doxysection{SFIi\+R.\+Modeling.\+Statistics Namespace Reference}
+\hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics}{}\label{namespace_s_f_ii_r_1_1_modeling_1_1_statistics}\index{SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_s_f_ii_r_1_1_modeling_1_1_statistics_1_1_log_entry}{Log\+Entry}}
+\begin{DoxyCompactList}\small\item\em Лог состояния симуляции в конкретный момент времени {\itshape Time} . \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_s_f_ii_r_1_1_modeling_1_1_statistics_1_1_process_info}{Process\+Info}}
+\begin{DoxyCompactList}\small\item\em Используется для отслеживания состояния процессов 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_s_f_ii_r_1_1_modeling_1_1_process}{Process}
+
+
+\end{DoxySeeAlso}
+. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_s_f_ii_r_1_1_modeling_1_1_statistics_1_1_request_info}{Request\+Info}}
+\begin{DoxyCompactList}\small\item\em Используется для отслеживания состояния заявок 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_s_f_ii_r_1_1_modeling_1_1_request}{Request}
+
+
+\end{DoxySeeAlso}
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2}{Current\+Activity}} \{ \newline
+\doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2aa5daf7f2ebbba4975d61dab1c40188c7}{IDLE}}
+, \doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2a62ff95719731cf2db7b31e1082b26153}{PROCESS\+\_\+\+ADDED}}
+, \doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2acea4b0d7dc15284a65c0b89ed56dff93}{PROCESS\+\_\+\+EXECUTING}}
+, \doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2a211bff06a746af259eb204ef26e10f75}{PROCESS\+\_\+\+COMPLETED}}
+, \newline
+\doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2ac93701b495cb9c4da72c3333bbbc9da9}{PROCESS\+\_\+\+RETURNED}}
+, \doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2ae4f0085f0fc66dae3d755f491aeca337}{PROCESS\+\_\+\+PREEMPTED}}
+ \}
+\item 
+enum \doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7}{Status}} \{ \newline
+\doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7a263e070213f2e7d03ee5094731cde95e}{EXITED}}
+, \doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7a1869d56535e8b1449a6da54ff5e11f50}{WAITING}}
+, \doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7aea8a564efbb910c22c45506553bb7469}{NOT\+\_\+\+ENOUGH\+\_\+\+MEMORY}}
+, \doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7ac6e6064fdaf5aa9b04472acaffdcea5b}{EXECUTING}}
+, \newline
+\doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7a696b031073e74bf2cb98e5ef201d4aa3}{UNKNOWN}}
+ \}
+\begin{DoxyCompactList}\small\item\em Используется в \doxylink{class_s_f_ii_r_1_1_modeling_1_1_statistics_1_1_process_info}{Process\+Info} и \doxylink{class_s_f_ii_r_1_1_modeling_1_1_statistics_1_1_request_info}{Request\+Info} для обозначения их состояния \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2}\index{SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}!CurrentActivity@{CurrentActivity}}
+\index{CurrentActivity@{CurrentActivity}!SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}}
+\doxysubsubsection{\texorpdfstring{CurrentActivity}{CurrentActivity}}
+{\footnotesize\ttfamily \label{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2} 
+enum \doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2}{SFIi\+R.\+Modeling.\+Statistics.\+Current\+Activity}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IDLE@{IDLE}!SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}}
+\index{SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}!IDLE@{IDLE}}
+}\Hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2aa5daf7f2ebbba4975d61dab1c40188c7}\label{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2aa5daf7f2ebbba4975d61dab1c40188c7} 
+IDLE&Операции не выполняются \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROCESS\_ADDED@{PROCESS\_ADDED}!SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}}
+\index{SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}!PROCESS\_ADDED@{PROCESS\_ADDED}}
+}\Hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2a62ff95719731cf2db7b31e1082b26153}\label{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2a62ff95719731cf2db7b31e1082b26153} 
+PROCESS\+\_\+\+ADDED&Процесс был создан из \doxylink{class_s_f_ii_r_1_1_modeling_1_1_request}{заявки} и добавлен в очередь выполнения \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROCESS\_EXECUTING@{PROCESS\_EXECUTING}!SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}}
+\index{SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}!PROCESS\_EXECUTING@{PROCESS\_EXECUTING}}
+}\Hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2acea4b0d7dc15284a65c0b89ed56dff93}\label{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2acea4b0d7dc15284a65c0b89ed56dff93} 
+PROCESS\+\_\+\+EXECUTING&Процесс выполняется \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROCESS\_COMPLETED@{PROCESS\_COMPLETED}!SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}}
+\index{SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}!PROCESS\_COMPLETED@{PROCESS\_COMPLETED}}
+}\Hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2a211bff06a746af259eb204ef26e10f75}\label{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2a211bff06a746af259eb204ef26e10f75} 
+PROCESS\+\_\+\+COMPLETED&Процесс завершился, ресурсы освобождены \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROCESS\_RETURNED@{PROCESS\_RETURNED}!SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}}
+\index{SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}!PROCESS\_RETURNED@{PROCESS\_RETURNED}}
+}\Hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2ac93701b495cb9c4da72c3333bbbc9da9}\label{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2ac93701b495cb9c4da72c3333bbbc9da9} 
+PROCESS\+\_\+\+RETURNED&Процесс вернулся из очереди \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PROCESS\_PREEMPTED@{PROCESS\_PREEMPTED}!SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}}
+\index{SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}!PROCESS\_PREEMPTED@{PROCESS\_PREEMPTED}}
+}\Hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2ae4f0085f0fc66dae3d755f491aeca337}\label{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_af7d9f525efdf6636c073ce6bead619f2ae4f0085f0fc66dae3d755f491aeca337} 
+PROCESS\+\_\+\+PREEMPTED&Кванты процессора закончились, процесс вернулся в очередь \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7}\index{SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}!Status@{Status}}
+\index{Status@{Status}!SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily \label{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7} 
+enum \doxymbox{\hyperlink{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7}{SFIi\+R.\+Modeling.\+Statistics.\+Status}}}
+
+
+
+Используется в \doxylink{class_s_f_ii_r_1_1_modeling_1_1_statistics_1_1_process_info}{Process\+Info} и \doxylink{class_s_f_ii_r_1_1_modeling_1_1_statistics_1_1_request_info}{Request\+Info} для обозначения их состояния 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXITED@{EXITED}!SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}}
+\index{SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}!EXITED@{EXITED}}
+}\Hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7a263e070213f2e7d03ee5094731cde95e}\label{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7a263e070213f2e7d03ee5094731cde95e} 
+EXITED&Используется, чтобы показать, что \doxylink{class_s_f_ii_r_1_1_modeling_1_1_statistics_1_1_process_info}{Process\+Info} или \doxylink{class_s_f_ii_r_1_1_modeling_1_1_statistics_1_1_request_info}{Request\+Info} вышли из очереди \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAITING@{WAITING}!SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}}
+\index{SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}!WAITING@{WAITING}}
+}\Hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7a1869d56535e8b1449a6da54ff5e11f50}\label{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7a1869d56535e8b1449a6da54ff5e11f50} 
+WAITING&Используется, чтобы показать, что \doxylink{class_s_f_ii_r_1_1_modeling_1_1_statistics_1_1_process_info}{Process\+Info} или \doxylink{class_s_f_ii_r_1_1_modeling_1_1_statistics_1_1_request_info}{Request\+Info} находятся в очереди \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOT\_ENOUGH\_MEMORY@{NOT\_ENOUGH\_MEMORY}!SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}}
+\index{SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}!NOT\_ENOUGH\_MEMORY@{NOT\_ENOUGH\_MEMORY}}
+}\Hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7aea8a564efbb910c22c45506553bb7469}\label{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7aea8a564efbb910c22c45506553bb7469} 
+NOT\+\_\+\+ENOUGH\+\_\+\+MEMORY&Используется только в \doxylink{class_s_f_ii_r_1_1_modeling_1_1_statistics_1_1_request_info}{Request\+Info}, если в системе {\bfseries{всего}} меньше памяти, чем необходимо для создания процесса \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXECUTING@{EXECUTING}!SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}}
+\index{SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}!EXECUTING@{EXECUTING}}
+}\Hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7ac6e6064fdaf5aa9b04472acaffdcea5b}\label{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7ac6e6064fdaf5aa9b04472acaffdcea5b} 
+EXECUTING&Используется только в \doxylink{class_s_f_ii_r_1_1_modeling_1_1_statistics_1_1_process_info}{Process\+Info}, чтобы показать, что он находится в очереди \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNKNOWN@{UNKNOWN}!SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}}
+\index{SFIiR.Modeling.Statistics@{SFIiR.Modeling.Statistics}!UNKNOWN@{UNKNOWN}}
+}\Hypertarget{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7a696b031073e74bf2cb98e5ef201d4aa3}\label{namespace_s_f_ii_r_1_1_modeling_1_1_statistics_a01adc8a5097020f20f7f0e9f349fbfa7a696b031073e74bf2cb98e5ef201d4aa3} 
+UNKNOWN&\\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,11 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="Debug logging" />
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="SFIiR.Modeling/SFIiR.Modeling.csproj" Id="e95e69ff-4454-416d-8b48-848f2111e8d9" />
+  <Project Path="SFIiR.Random/SFIiR.Random.csproj" Id="6bc4d8ca-258d-473e-8c8d-3a518c3e3830" />
+  <Project Path="SFIiR/SFIiR.csproj" Id="304ffb0b-0404-4f0c-aefd-2e46639a3c25" />
+  <Project Path="SFIiR_fs/SFIiR_fs.fsproj" Id="373565a6-b1ad-4ff5-a388-ba9c8d015468" />
+</Solution>

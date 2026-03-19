@@ -1,0 +1,87 @@
+\doxysection{SFIi\+R.\+Random.\+LCG(long seed, long a=1103515245L, long c=12345L, long m=2147483648L) Class Reference}
+\hypertarget{class_s_f_ii_r_1_1_random_1_1_l_c_g}{}\label{class_s_f_ii_r_1_1_random_1_1_l_c_g}\index{SFIiR.Random.LCG@{SFIiR.Random.LCG}}
+
+
+Генератор псевдослучайных чисел, реализующий линейный конгруэнтный метод (\doxylink{class_s_f_ii_r_1_1_random_1_1_l_c_g}{LCG}).  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \doxymbox{\hyperlink{class_s_f_ii_r_1_1_random_1_1_l_c_g_aff70801aa9af71cf51715895790ef526}{Get\+Rand}} ()
+\begin{DoxyCompactList}\small\item\em Генерирует следующее псевдослучайное число с равномерным распределением \end{DoxyCompactList}\item 
+IEnumerable$<$ double $>$ \doxymbox{\hyperlink{class_s_f_ii_r_1_1_random_1_1_l_c_g_a01cc0c6df95dc6432562fd5481389cf9}{Generate\+Sequence}} (int n)
+\begin{DoxyCompactList}\small\item\em Генерирует последовательность из {\itshape n}  псевдослучайных чисел. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+long \doxymbox{\hyperlink{class_s_f_ii_r_1_1_random_1_1_l_c_g_ac723ccb0c02c3aacc684194f90c1f609}{Seed}}\hspace{0.3cm}{\ttfamily  \+[set]\+}
+\begin{DoxyCompactList}\small\item\em Устанавливает новое начальное значение для генератора \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Генератор псевдослучайных чисел, реализующий линейный конгруэнтный метод (\doxylink{class_s_f_ii_r_1_1_random_1_1_l_c_g}{LCG}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Начальное значение для генерации последовательности\\
+\hline
+\end{DoxyParams}
+
+
+Линейный конгруэнтный метод 
+
+\label{doc-func-members}
+\Hypertarget{class_s_f_ii_r_1_1_random_1_1_l_c_g_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_s_f_ii_r_1_1_random_1_1_l_c_g_a01cc0c6df95dc6432562fd5481389cf9}\index{SFIiR.Random.LCG@{SFIiR.Random.LCG}!GenerateSequence@{GenerateSequence}}
+\index{GenerateSequence@{GenerateSequence}!SFIiR.Random.LCG@{SFIiR.Random.LCG}}
+\doxysubsubsection{\texorpdfstring{GenerateSequence()}{GenerateSequence()}}
+{\footnotesize\ttfamily \label{class_s_f_ii_r_1_1_random_1_1_l_c_g_a01cc0c6df95dc6432562fd5481389cf9} 
+IEnumerable$<$ double $>$ SFIi\+R.\+Random.\+LCG.\+Generate\+Sequence (\begin{DoxyParamCaption}\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Генерирует последовательность из {\itshape n}  псевдослучайных чисел. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Количество чисел в последовательности.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Коллекция \doxylink{}{IEnumerable$<$\+Double$>$}, содержащая {\itshape n}  чисел в диапазоне {\ttfamily \+[0.\+0, 1.\+0)}. 
+\end{DoxyReturn}
+\Hypertarget{class_s_f_ii_r_1_1_random_1_1_l_c_g_aff70801aa9af71cf51715895790ef526}\index{SFIiR.Random.LCG@{SFIiR.Random.LCG}!GetRand@{GetRand}}
+\index{GetRand@{GetRand}!SFIiR.Random.LCG@{SFIiR.Random.LCG}}
+\doxysubsubsection{\texorpdfstring{GetRand()}{GetRand()}}
+{\footnotesize\ttfamily \label{class_s_f_ii_r_1_1_random_1_1_l_c_g_aff70801aa9af71cf51715895790ef526} 
+double SFIi\+R.\+Random.\+LCG.\+Get\+Rand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Генерирует следующее псевдослучайное число с равномерным распределением 
+
+\begin{DoxyReturn}{Returns}
+Число типа {\ttfamily double} в полуоткрытом интервале {\ttfamily \+[0.\+0, 1.\+0)} 
+\end{DoxyReturn}
+
+
+\label{doc-property-members}
+\Hypertarget{class_s_f_ii_r_1_1_random_1_1_l_c_g_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_s_f_ii_r_1_1_random_1_1_l_c_g_ac723ccb0c02c3aacc684194f90c1f609}\index{SFIiR.Random.LCG@{SFIiR.Random.LCG}!Seed@{Seed}}
+\index{Seed@{Seed}!SFIiR.Random.LCG@{SFIiR.Random.LCG}}
+\doxysubsubsection{\texorpdfstring{Seed}{Seed}}
+{\footnotesize\ttfamily \label{class_s_f_ii_r_1_1_random_1_1_l_c_g_ac723ccb0c02c3aacc684194f90c1f609} 
+long SFIi\+R.\+Random.\+LCG.\+Seed\hspace{0.3cm}{\ttfamily [set]}}
+
+
+
+Устанавливает новое начальное значение для генератора 
+
+Новое значение зерна
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+SFIi\+R.\+Random/\+\doxymbox{\hyperlink{_l_c_g_8cs}{LCG.\+cs}}\end{DoxyCompactItemize}
