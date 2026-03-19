@@ -1,6 +1,6 @@
 on:
   push:
-    branches: [ main ] # Убедитесь, что это имя вашей исходной ветки (main или master)
+    branches: [ master ]
 
 permissions:
   pages: write
@@ -30,7 +30,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '_site' # Путь к папке, которую сгенерировал docfx
+          path: '_site'
       
       - name: Deploy to GitHub Pages
         id: deployment
