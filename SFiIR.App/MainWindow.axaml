@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:SFiIR.App"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
+        x:Class="SFiIR.App.MainWindow"
+        Title="СФиИР"
+        Icon="{DynamicResource AppIcon}">
+    
+    <Grid RowDefinitions="*" ColumnDefinitions="324, auto, *">
+
+        <local:SettingsControl Grid.Row="1" 
+                               Grid.Column="0"
+                               x:Name="Settings"/>
+
+        <GridSplitter Grid.Row="1" Grid.Column="1"
+                      ResizeDirection="Columns"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Stretch"
+                      Background="{DynamicResource ListMediumBrush}"
+                      Width="4"/>
+
+        <local:SimulationVisualizationsControl Grid.Row="1" Grid.Column="2"
+                                               x:Name="Visualization"/>
+    
+    </Grid>
+</Window>

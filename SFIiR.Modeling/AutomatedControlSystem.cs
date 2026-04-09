@@ -1,6 +1,7 @@
-﻿using SFIiR.Modeling.Statistics;
+﻿using SFiIR.Modeling.Statistics;
+using System.Diagnostics;
 
-namespace SFIiR.Modeling;
+namespace SFiIR.Modeling;
 
 /// <summary>
 ///     Используется для проведения тестирования диспетчеризации программных процессов
@@ -17,28 +18,39 @@ public class AutomatedControlSystem(
 {
     private int curMem = 0;
     private int curTime = 0;
-    private readonly int maxMem = maxMem;
-    private readonly int testTime = testTime;
-    private readonly int cpuQuant = cpuQuant;
+    public readonly int maxMem = maxMem;
+    public readonly int testTime = testTime;
+    public readonly int cpuQuant = cpuQuant;
     private readonly LinkedList<Request> entryQueue = new();
     private readonly LinkedList<Process> processQueue = new();
-#if DEBUG_LOGGING
     /// <summary>
     ///     Журнал событий симуляции, содержащий информацию о состоянии системы в каждый момент времени.
-    ///     Доступен только при компиляции с определенным символом DEBUG_LOGGING.
     /// </summary>
     public readonly List<LogEntry> logEntries = new();
     /// <summary>
     ///     Список завершенных заявок, успешно обработанных системой.
-    ///     Доступен только при компиляции с определенным символом DEBUG_LOGGING.
     /// </summary>
     public readonly List<Request> finishedRequests = new();
     /// <summary>
     ///     Список завершенных процессов, успешно выполненных системой.
-    ///     Доступен только при компиляции с определенным символом DEBUG_LOGGING.
     /// </summary>
     public readonly List<Process> finishedProcesses = new();
-#endif
+    /// <summary>
+    ///     Список всех заявок
+    /// </summary>
+    public IEnumerable<Request> AllRequests => entryQueue.Concat(finishedRequests).DistinctBy(x => x.Id);
+    /// <summary>
+    ///     Список всех процессов
+    /// </summary>
+    public IEnumerable<Process> AllProcesses => processQueue.Concat(finishedProcesses).DistinctBy(x => x.Id);
+    /// <summary>
+    ///     Интервалы <b>выполнения</b> процессов
+    /// </summary>
+    public readonly List<(int processId, int start, int end)> ProcessIntervals = new();
+    /// <summary>
+    ///     Интервалы <b>ожидания</b> заявок во входной очереди
+    /// </summary>
+    public readonly List<(int processId, int start, int end)> RequestIntervals = new();
     /// <summary>
     ///     Реализует алгоритм кругового циклического планирования (Round Robin).
     ///     Выполняет один цикл обработки текущего процесса с выделением квантов процессорного времени.
@@ -49,41 +61,45 @@ public class AutomatedControlSystem(
 
         var process = processQueue.First!.Value;
         processQueue.RemoveFirst();
-#if DEBUG_LOGGING
+
+        var interval = (process.Id, curTime, (int) -1);
         AddToLogs(process, CurrentActivity.PROCESS_RETURNED);
         int waitTime = curTime - process.ProcessInfo.PreemptedTime;
         process.ProcessInfo.QueueTime += waitTime;
         process.ProcessInfo.Status = Status.EXECUTING;
-#endif
+
         for (int i = 0; i < cpuQuant; i++)
         {
             if (curTime == testTime) return;
             curTime++;
             process.CpuTime--;
-#if DEBUG_LOGGING
             process.ProcessInfo.ExecutionTime++;
+
             AddToLogs(process, CurrentActivity.PROCESS_EXECUTING);
-#endif
+
             if (process.CpuTime <= 0)
             {
                 curMem -= process.MemUsage;
-#if DEBUG_LOGGING
+
+                interval.Item3 = curTime;
+                ProcessIntervals.Add(interval);
                 AddToLogs(process, CurrentActivity.PROCESS_COMPLETED);
                 process.ProcessInfo.Status = Status.EXITED;
                 process.ProcessInfo.EndTime = curTime;
                 finishedProcesses.Add(process);
-#endif
+
                 return;
             }
         }
 
         if (process.CpuTime > 0)
         {
-#if DEBUG_LOGGING
+            interval.Item3 = curTime;
+            ProcessIntervals.Add(interval);
             process.ProcessInfo.PreemptedTime = curTime;
             process.ProcessInfo.Status = Status.WAITING;
             AddToLogs(process, CurrentActivity.PROCESS_PREEMPTED);
-#endif
+
             processQueue.AddLast(process);
         }
     }
@@ -107,13 +123,13 @@ public class AutomatedControlSystem(
                     curMem += req.MemUsage;
 
                     var process = new Process(req);
-#if DEBUG_LOGGING
+
                     AddToLogs(process, CurrentActivity.PROCESS_ADDED);
                     process.ProcessInfo.PreemptedTime = curTime;
                     req.RequestInfo.ExitTime = curTime;
                     req.RequestInfo.Status = Status.EXITED;
                     finishedRequests.Add(req);
-#endif
+
                     processQueue.AddLast(process);
                 }
                 else
@@ -123,11 +139,10 @@ public class AutomatedControlSystem(
                     if (req.MemUsage > maxMem)
                     {
                         entryQueue.RemoveFirst();
-#if DEBUG_LOGGING
+
                         req.RequestInfo.ExitTime = curTime;
                         req.RequestInfo.Status = Status.NOT_ENOUGH_MEMORY;
                         finishedRequests.Add(req);
-#endif
                     }
                     else
                     {
@@ -141,22 +156,29 @@ public class AutomatedControlSystem(
                 RoundRobin();
                 continue;
             }
+            else
+            {
+                AddToLogs(null, CurrentActivity.IDLE);
+            }
             curTime++;
         }
+
+        
+        RequestIntervals.AddRange(entryQueue.Select(req => (req.Id, req.ArrivalTime, curTime)));
+        RequestIntervals.AddRange(finishedRequests.Select(req => (req.Id, req.ArrivalTime, (int)req.RequestInfo.ExitTime)));
+
+        foreach (var p in processQueue) p.ProcessInfo.QueueTime += curTime - p.ProcessInfo.PreemptedTime;
     }
-#if DEBUG_LOGGING
     /// <summary>
     ///     Добавляет запись в журнал событий симуляции.
-    ///     Метод доступен только при компиляции с определенным символом DEBUG_LOGGING.
     /// </summary>
     /// <param name="Process">Процесс, к которому относится запись журнала.</param>
     /// <param name="CurrentActivity">Текущее состояние системы или процесса.</param>
-    private void AddToLogs(Process Process, CurrentActivity CurrentActivity) => logEntries.Add(new(
+    private void AddToLogs(Process? Process, CurrentActivity CurrentActivity) => logEntries.Add(new(
             Time: curTime,
             MemoryUsage: curMem,
-            ProccessId: Process.Id,
-            RemainingTime: Process.CpuTime,
-            CurrentActivity: CurrentActivity.PROCESS_COMPLETED
+            ProccessId: Process?.Id,
+            RemainingTime: Process?.CpuTime,
+            CurrentActivity: CurrentActivity
         ));
-#endif
 }

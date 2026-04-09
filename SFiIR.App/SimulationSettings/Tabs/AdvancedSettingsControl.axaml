@@ -1,0 +1,53 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="using:SFiIR.App.SimulationSettings"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="800"
+             x:Class="SFiIR.App.SimulationSettings.AdvancedSettingsControl">
+    
+    <Grid RowDefinitions="1, *, Auto">
+        
+        <Border Grid.Row="0"
+                Background="{DynamicResource ListMediumBrush}"
+                Height="1"/>
+
+        <TabControl x:Name="MainTabControl"
+                    SelectionChanged="MainTabControl_SelectionChanged"
+                    Grid.Row="1"
+                    Margin="0,0"/>
+
+        <Grid Grid.Row="2" 
+              ColumnDefinitions="*, *"
+              Margin="10">
+            <Button Grid.Column="0"
+                    x:Name="AddButton"
+                    Click="AddButton_Click"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Padding="5"
+                    CornerRadius="12, 4, 4, 12">
+                <TextBlock Text="Добавить вкладку"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"/>
+            </Button>
+            <Button Grid.Column="1"
+                    x:Name="DeleteButton"
+                    Click="DeleteButton_Click"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Padding="5"
+                    CornerRadius="4, 12, 12, 4">
+                <TextBlock Text="Удалить вкладку"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"/>
+            </Button>
+        </Grid>
+
+    </Grid>
+    
+</UserControl>

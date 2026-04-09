@@ -1,0 +1,84 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:avalonia="using:ScottPlot.Avalonia"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SFiIR.App.SimulationVisualization.DistributionsControl">
+  <ScrollViewer>
+	  <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" Margin="10">
+		  <TextBlock Text="Экспоненциальное распределение (поступление заявок)"
+               FontSize="18"
+               FontWeight="Bold"
+               Grid.Row="0"
+               Margin="0, 10"/>
+
+          <Border CornerRadius="10"
+                  BorderThickness="1"
+                  BorderBrush="{DynamicResource BaseMediumLowBrush}"
+                  Background="{DynamicResource RegionColorBrush}"
+                  Padding="5"
+                  Height="300"
+                  Margin="50, 0"
+                  Grid.Row="1">
+              <Border.Effect>
+                  <DropShadowEffect BlurRadius="25" 
+                              OffsetX="1" 
+                              OffsetY="2" 
+                              Color="{DynamicResource ShadowHeavyColor}"/>
+              </Border.Effect>
+
+              <avalonia:AvaPlot x:Name="ArrivalLambdaPlot"/>
+          </Border>
+		  
+          <TextBlock Text="Экспоненциальное распределение (необходимая память)"
+               FontSize="18"
+               FontWeight="Bold"
+               Grid.Row="2"
+               Margin="0, 10"/>
+
+          <Border CornerRadius="10"
+                  BorderThickness="1"
+                  BorderBrush="{DynamicResource BaseMediumLowBrush}"
+                  Background="{DynamicResource RegionColorBrush}"
+                  Padding="5"
+                  Height="300"
+                  Margin="50, 0"
+                  Grid.Row="3">
+              <Border.Effect>
+                  <DropShadowEffect BlurRadius="25" 
+                              OffsetX="1" 
+                              OffsetY="2" 
+                              Color="{DynamicResource ShadowHeavyColor}"/>
+              </Border.Effect>
+
+              <avalonia:AvaPlot x:Name="MemLambdaPlot"/>
+          </Border>
+
+		  <TextBlock Text="Распределение Пуассона (кванты процессорного времени)"
+               FontSize="18"
+               FontWeight="Bold"
+               Grid.Row="4"
+               Margin="0, 10"/>
+
+          <Border CornerRadius="10"
+                  BorderThickness="1"
+                  BorderBrush="{DynamicResource BaseMediumLowBrush}"
+                  Background="{DynamicResource RegionColorBrush}"
+                  Padding="5"
+                  Height="300"
+                  Margin="50, 0"
+                  Grid.Row="5">
+              <Border.Effect>
+                  <DropShadowEffect BlurRadius="25" 
+                              OffsetX="1" 
+                              OffsetY="2" 
+                              Color="{DynamicResource ShadowHeavyColor}"/>
+              </Border.Effect>
+
+              <avalonia:AvaPlot x:Name="CpuLambdaPlot"/>
+          </Border>
+
+      </Grid>
+  </ScrollViewer>
+</UserControl>

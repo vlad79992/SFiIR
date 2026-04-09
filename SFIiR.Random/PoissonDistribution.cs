@@ -1,4 +1,4 @@
-﻿namespace SFIiR.Random;
+﻿namespace SFiIR.Random;
 
 /// <summary>
 /// Статический класс для генерации случайных величин, 

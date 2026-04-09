@@ -1,0 +1,125 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Design.PreviewWith >
+		<Border Padding="20">
+			<PathIcon Data="{StaticResource MenuIcon}" Width="16" Height="16" />
+		</Border>
+	</Design.PreviewWith>
+	
+	<ResourceDictionary.ThemeDictionaries>
+		
+		<!-- Светлая тема -->
+		<ResourceDictionary x:Key="Light">
+
+			<WindowIcon x:Key="AppIcon">avares://SFiIR.App/Assets/LightIcon.png</WindowIcon>
+			
+			<Color x:Key="ShadowColor">#66000000</Color>
+			<Color x:Key="ShadowLightColor">#33000000</Color>
+			<Color x:Key="ShadowHeavyColor">#99000000</Color> 
+
+			<Color x:Key="AccentColor">#ffcc4d11</Color>
+			<Color x:Key="AltHighColor">White</Color>
+			<Color x:Key="AltLowColor">White</Color>
+			<Color x:Key="AltMediumColor">White</Color>
+			<Color x:Key="AltMediumHighColor">White</Color>
+			<Color x:Key="AltMediumLowColor">White</Color>
+			<Color x:Key="BaseHighColor">Black</Color>
+			<Color x:Key="BaseLowColor">#ff7cbee0</Color>
+			<Color x:Key="BaseMediumColor">#ff3282a8</Color>
+			<Color x:Key="BaseMediumHighColor">#ff005a83</Color>
+			<Color x:Key="BaseMediumLowColor">#ff196e96</Color>
+			<Color x:Key="ChromeAltLowColor">#ff005a83</Color>
+			<Color x:Key="ChromeBlackHighColor">Black</Color>
+			<Color x:Key="ChromeBlackLowColor">#ff7cbee0</Color>
+			<Color x:Key="ChromeBlackMediumColor">#ff005a83</Color>
+			<Color x:Key="ChromeBlackMediumLowColor">#ff3282a8</Color>
+			<Color x:Key="ChromeDisabledHighColor">#ff7cbee0</Color>
+			<Color x:Key="ChromeDisabledLowColor">#ff3282a8</Color>
+			<Color x:Key="ChromeGrayColor">#ff196e96</Color>
+			<Color x:Key="ChromeHighColor">#ff7cbee0</Color>
+			<Color x:Key="ChromeLowColor">#ffc1e9fe</Color>
+			<Color x:Key="ChromeMediumColor">#ffb3e0f8</Color>
+			<Color x:Key="ChromeMediumLowColor">#ffc1e9fe</Color>
+			<Color x:Key="ChromeWhiteColor">White</Color>
+			<Color x:Key="ListLowColor">#ffb3e0f8</Color>
+			<Color x:Key="ListMediumColor">#ff7cbee0</Color>
+			<Color x:Key="RegionColorColor">#ffcfeaff</Color>
+			
+		</ResourceDictionary>
+		
+		<!-- Тёмная тема -->
+		<ResourceDictionary x:Key="Dark">
+
+			<WindowIcon x:Key="AppIcon">avares://SFiIR.App/Assets/DarkIcon.png</WindowIcon>
+			
+			<Color x:Key="ShadowColor">#B3000000</Color> 
+			<Color x:Key="ShadowLightColor">#66000000</Color> 
+			<Color x:Key="ShadowHeavyColor">#E6000000</Color> 
+			
+			<Color x:Key="AccentColor">#ffcc4d11</Color>
+			<Color x:Key="AltHighColor">Black</Color>
+			<Color x:Key="AltLowColor">Black</Color>
+			<Color x:Key="AltMediumColor">Black</Color>
+			<Color x:Key="AltMediumHighColor">Black</Color>
+			<Color x:Key="AltMediumLowColor">Black</Color>
+			<Color x:Key="BaseHighColor">White</Color>
+			<Color x:Key="BaseLowColor">#ff2f7bad</Color>
+			<Color x:Key="BaseMediumColor">#ff8dbfdf</Color>
+			<Color x:Key="BaseMediumHighColor">#ffa5d0ec</Color>
+			<Color x:Key="BaseMediumLowColor">#ff5e9dc6</Color>
+			<Color x:Key="ChromeAltLowColor">#ffa5d0ec</Color>
+			<Color x:Key="ChromeBlackHighColor">Black</Color>
+			<Color x:Key="ChromeBlackLowColor">#ffa5d0ec</Color>
+			<Color x:Key="ChromeBlackMediumColor">Black</Color>
+			<Color x:Key="ChromeBlackMediumLowColor">Black</Color>
+			<Color x:Key="ChromeDisabledHighColor">#ff2f7bad</Color>
+			<Color x:Key="ChromeDisabledLowColor">#ff8dbfdf</Color>
+			<Color x:Key="ChromeGrayColor">#ff76aed3</Color>
+			<Color x:Key="ChromeHighColor">#ff76aed3</Color>
+			<Color x:Key="ChromeLowColor">#ff093b73</Color>
+			<Color x:Key="ChromeMediumColor">#ff134b82</Color>
+			<Color x:Key="ChromeMediumLowColor">#ff266b9f</Color>
+			<Color x:Key="ChromeWhiteColor">White</Color>
+			<Color x:Key="ListLowColor">#ff134b82</Color>
+			<Color x:Key="ListMediumColor">#ff2f7bad</Color>
+			<Color x:Key="RegionColorColor">#ff0d2644</Color>
+		</ResourceDictionary>
+	
+	</ResourceDictionary.ThemeDictionaries>
+	
+	<SolidColorBrush x:Key="AccentBrush" Color="{DynamicResource AccentColor}" />
+	<SolidColorBrush x:Key="AltHighBrush" Color="{DynamicResource AltHighColor}" />
+	<SolidColorBrush x:Key="AltLowBrush" Color="{DynamicResource AltLowColor}" />
+	<SolidColorBrush x:Key="AltMediumBrush" Color="{DynamicResource AltMediumColor}" />
+	<SolidColorBrush x:Key="AltMediumHighBrush" Color="{DynamicResource AltMediumHighColor}" />
+	<SolidColorBrush x:Key="AltMediumLowBrush" Color="{DynamicResource AltMediumLowColor}" />
+	<SolidColorBrush x:Key="BaseHighBrush" Color="{DynamicResource BaseHighColor}" />
+	<SolidColorBrush x:Key="BaseLowBrush" Color="{DynamicResource BaseLowColor}" />
+	<SolidColorBrush x:Key="BaseMediumBrush" Color="{DynamicResource BaseMediumColor}" />
+	<SolidColorBrush x:Key="BaseMediumHighBrush" Color="{DynamicResource BaseMediumHighColor}" />
+	<SolidColorBrush x:Key="BaseMediumLowBrush" Color="{DynamicResource BaseMediumLowColor}" />
+	<SolidColorBrush x:Key="ChromeAltLowBrush" Color="{DynamicResource ChromeAltLowColor}" />
+	<SolidColorBrush x:Key="ChromeBlackHighBrush" Color="{DynamicResource ChromeBlackHighColor}" />
+	<SolidColorBrush x:Key="ChromeBlackLowBrush" Color="{DynamicResource ChromeBlackLowColor}" />
+	<SolidColorBrush x:Key="ChromeBlackMediumBrush" Color="{DynamicResource ChromeBlackMediumColor}" />
+	<SolidColorBrush x:Key="ChromeBlackMediumLowBrush" Color="{DynamicResource ChromeBlackMediumLowColor}" />
+	<SolidColorBrush x:Key="ChromeDisabledHighBrush" Color="{DynamicResource ChromeDisabledHighColor}" />
+	<SolidColorBrush x:Key="ChromeDisabledLowBrush" Color="{DynamicResource ChromeDisabledLowColor}" />
+	<SolidColorBrush x:Key="ChromeGrayBrush" Color="{DynamicResource ChromeGrayColor}" />
+	<SolidColorBrush x:Key="ChromeHighBrush" Color="{DynamicResource ChromeHighColor}" />
+	<SolidColorBrush x:Key="ChromeLowBrush" Color="{DynamicResource ChromeLowColor}" />
+	<SolidColorBrush x:Key="ChromeMediumBrush" Color="{DynamicResource ChromeMediumColor}" />
+	<SolidColorBrush x:Key="ChromeMediumLowBrush" Color="{DynamicResource ChromeMediumLowColor}" />
+	<SolidColorBrush x:Key="ChromeWhiteBrush" Color="{DynamicResource ChromeWhiteColor}" />
+	<SolidColorBrush x:Key="ListLowBrush" Color="{DynamicResource ListLowColor}" />
+	<SolidColorBrush x:Key="ListMediumBrush" Color="{DynamicResource ListMediumColor}" />
+	<SolidColorBrush x:Key="RegionColorBrush" Color="{DynamicResource RegionColorColor}" />
+
+	<StreamGeometry x:Key="CloseIcon">
+		   M256,760L200,704L424,480L200,256L256,200L480,424L704,200L760,256L536,480L760,704L704,760L480,536L256,760Z
+	</StreamGeometry>
+	<StreamGeometry x:Key="MenuIcon">
+		M120,720L120,640L840,640L840,720L120,720ZM120,520L120,440L840,440L840,520L120,520ZM120,320L120,240L840,240L840,320L120,320Z
+	</StreamGeometry>
+</ResourceDictionary>

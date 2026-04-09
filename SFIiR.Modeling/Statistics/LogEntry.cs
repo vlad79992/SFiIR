@@ -1,4 +1,4 @@
-﻿namespace SFIiR.Modeling.Statistics;
+﻿namespace SFiIR.Modeling.Statistics;
 
 /// <summary>
 ///     Лог состояния симуляции в конкретный момент времени <paramref name="Time"/>.
@@ -42,6 +42,10 @@ public readonly struct LogEntry(
     ///     Если процесс не выполняется, значение равно <see langword="null"/>.
     /// </summary>
     public int? RemainingTime { get; } = RemainingTime;
+    public override string ToString()
+    {
+        return $"Time={Time};MemoryUsage={MemoryUsage};CurrentActivity={CurrentActivity};ProcessID={ProccessId};RemainingTime={RemainingTime}";
+    }
 }
 
 /// <summary>

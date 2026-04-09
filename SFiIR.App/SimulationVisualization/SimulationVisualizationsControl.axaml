@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="using:SFiIR.App"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:simulationvisualization="using:SFiIR.App.SimulationVisualization"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SFiIR.App.SimulationVisualizationsControl">
+  <TabControl Margin="5, 0">
+            <TabItem Header="Процессы" FontSize="18">
+                <simulationvisualization:ChartControl
+                x:Name="Chart"/>
+            </TabItem>
+            <TabItem Header="Статистика" FontSize="18">
+                <simulationvisualization:StatisticsControl
+                x:Name="Statistics"/>
+            </TabItem>
+            <TabItem Header="Распределения" FontSize="18">
+                <simulationvisualization:DistributionsControl
+                x:Name="Distributions"/>
+            </TabItem>
+            <TabItem Header="Изменения параметров" FontSize="18">
+                <local:StatisticsChangesControl
+                x:Name="Changes"/>
+            </TabItem>
+        </TabControl>
+</UserControl>

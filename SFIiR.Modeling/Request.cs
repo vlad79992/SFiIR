@@ -1,7 +1,7 @@
-﻿using SFIiR.Modeling.Statistics;
-using SFIiR.Random;
+﻿using SFiIR.Modeling.Statistics;
+using SFiIR.Random;
 
-namespace SFIiR.Modeling;
+namespace SFiIR.Modeling;
 
 /// <summary>
 /// Заявка на решение задачи в АСУ.
@@ -9,9 +9,6 @@ namespace SFIiR.Modeling;
 /// </summary>
 /// <remarks>
 /// <i>АСУ – автоматизированная система управления.</i>
-/// <para>
-/// При символе компиляции <c>DEBUG_LOGGING</c> класс дополнительно содержит свойство <see cref="RequestInfo"/>.
-/// </para>
 /// </remarks>
 /// <seealso cref="Process"/>
 /// <param name="Id">Уникальный идентификатор заявки.</param>
@@ -31,10 +28,8 @@ public class Request(int Id, int MemUsage, int CpuTime, int ArrivalTime)
     public int CpuTime { get; } = CpuTime;
     /// <summary>Время добавления в очередь заявок</summary>
     public int ArrivalTime { get; } = ArrivalTime;
-#if DEBUG_LOGGING
     /// <summary>Используется для отслеживания и логирования состояния текущей заявки</summary>
     public RequestInfo RequestInfo { get; } = new(ArrivalTime);
-#endif
     /// <summary>
     /// Метод для генерации простейшего потока заявок.   
     /// <para><b>Параметры распределений:</b></para>

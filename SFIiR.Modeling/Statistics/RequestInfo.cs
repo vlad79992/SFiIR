@@ -1,4 +1,4 @@
-﻿namespace SFIiR.Modeling.Statistics;
+﻿namespace SFiIR.Modeling.Statistics;
 
 /// <summary>
 ///     Используется для отслеживания состояния заявок, поступающих в систему управления вычислениями.

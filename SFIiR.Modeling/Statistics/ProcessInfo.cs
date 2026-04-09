@@ -1,4 +1,4 @@
-﻿namespace SFIiR.Modeling.Statistics;
+﻿namespace SFiIR.Modeling.Statistics;
 
 /// <summary>
 ///     Используется для отслеживания состояния процессов, созданных из заявок.
@@ -6,14 +6,14 @@
 ///     <seealso cref="Process"/>
 /// </summary>
 /// <param name="RequestInfo">Состояние заявки, из которой был создан этот процесс.</param>
-public class ProcessInfo(RequestInfo RequestInfo)
+public class ProcessInfo(Request Request)
 {
     /// <summary>
     ///     Состояние заявки, из которой был создан этот процесс.
     ///     Содержит исходные данные и параметры, определяющие требования процесса к ресурсам.
     ///     <seealso cref="Request"/>
     /// </summary>
-    public RequestInfo RequestInfo { get; } = RequestInfo;
+    public RequestInfo RequestInfo { get; } = Request.RequestInfo;
     /// <summary>
     ///     Состояние процесса в системе управления вычислениями.
     ///     Определяет текущую фазу жизненного цикла процесса.
@@ -39,4 +39,9 @@ public class ProcessInfo(RequestInfo RequestInfo)
     ///     Используется для расчета времени ожидания и отслеживания циклов выполнения-ожидания.
     /// </summary>
     public int PreemptedTime { get; set; } = 0;
+    /// <summary>
+    ///     Количество времени процессора, которое необходимо для завершения процесса.
+    ///     <b>Не</b> изменяется по мере выполнения
+    /// </summary>
+    public int CpuTime { get; } = Request.CpuTime;
 }

@@ -1,0 +1,66 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <TabControl Margin="5">
+                <TabItem Header="Tab 1">
+                    <TextBlock Margin="5">This is tab 1 content</TextBlock>
+                </TabItem>
+                <TabItem Header="Tab 2">
+                    <TextBlock Margin="5">This is tab 2 content</TextBlock>
+                </TabItem>
+            </TabControl>
+        </Border>
+    </Design.PreviewWith>
+    
+    <Style Selector="TabItem">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border Name="Border"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Padding="2"
+                            Margin="5">
+                        <ContentPresenter Content="{TemplateBinding Header}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style Selector="TabItem:selected">
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Background" Value="{DynamicResource ListLowBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource BaseHighBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border Name="Border"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Padding="2"
+                            Margin="5">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="4" 
+                                                  OffsetX="2" 
+                                                  OffsetY="2" 
+                                                  Color="{DynamicResource ShadowColor}" />
+                            </Border.Effect>
+                        <ContentPresenter Content="{TemplateBinding Header}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style Selector="TabItem:pointerover">
+        <Setter Property="Foreground" Value="{DynamicResource BaseHighBrush}"/>
+    </Style>
+</Styles>

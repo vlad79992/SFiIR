@@ -1,0 +1,29 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:simulationsettings="using:SFiIR.App.SimulationSettings"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SFiIR.App.SettingsControl">
+
+    <Grid RowDefinitions="Auto, *">
+        <TextBlock Text="Настройки симуляции"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   TextWrapping="Wrap"
+                   Margin="15, 5"
+                   Grid.Row="0"/>
+        
+        <TabControl Margin="0, 0" Grid.Row="1">
+            <TabItem Header="Базовые">
+                    <simulationsettings:BasicSettingsControl
+                    x:Name="BasicSettings"/>
+            </TabItem>
+            <TabItem Header="Расширенные">
+                <simulationsettings:AdvancedSettingsControl
+                x:Name="AdvancedSettings"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+
+</UserControl>

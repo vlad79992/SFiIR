@@ -1,0 +1,70 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="600"
+             x:Class="SFiIR.App.SimulationSettings.BasicSettingsControl">
+  
+    <UserControl.Resources>
+        <DropShadowEffect x:Key="MyShadow" 
+                          BlurRadius="8" 
+                          OffsetX="2" 
+                          OffsetY="4" 
+                          Color="{DynamicResource ShadowLightColor}" />
+    </UserControl.Resources>
+
+    <Grid RowDefinitions="1, *">
+        
+        <Border Grid.Row="0"
+                Background="{DynamicResource ListMediumBrush}"
+                Height="1"/>
+        
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Margin="20">
+                
+                <TextBlock Margin="0 5">Лямбда прибытия:</TextBlock>    
+                <TextBox x:Name="ArrivalLambdaBox"
+                         TextChanged="ArrivalLambdaBox_TextChanged"
+                         Effect="{DynamicResource MyShadow}"/>
+
+                <TextBlock Margin="0 5">Лямбда памяти:</TextBlock>    
+                <TextBox x:Name="MemLambdaBox"
+                         TextChanged="MemLambdaBox_TextChanged"
+                         Effect="{DynamicResource MyShadow}"/>
+
+                <TextBlock Margin="0 5">Лямбда CPU:</TextBlock>    
+                <TextBox x:Name="CpuLambdaBox"
+                         TextChanged="CpuLambdaBox_TextChanged"
+                         Effect="{DynamicResource MyShadow}"/>
+
+                <TextBlock Margin="0 5">Время прибытия заявок:</TextBlock>    
+                <TextBox x:Name="ArrivalTimeBox"
+                         TextChanged="ArrivalTimeBox_TextChanged"
+                         Effect="{DynamicResource MyShadow}"/>
+
+                <TextBlock Margin="0 5">Время теста:</TextBlock>    
+                <TextBox x:Name="TestTimeBox"
+                         TextChanged="TestTimeBox_TextChanged"
+                         Effect="{DynamicResource MyShadow}"/>
+
+                <TextBlock Margin="0 5">Количество памяти:</TextBlock>    
+                <TextBox x:Name="MaxMemBox"
+                         TextChanged="MaxMemBox_TextChanged"
+                         Effect="{DynamicResource MyShadow}"/>
+
+                <TextBlock Margin="0 5">Время выполнения процесса:</TextBlock>    
+                <TextBox x:Name="CpuQuantBox"
+                         TextChanged="CpuQuantBox_TextChanged"
+                         Effect="{DynamicResource MyShadow}"/>
+
+                <TextBlock Margin="0 5">seed:</TextBlock>    
+                <TextBox x:Name="RngSeedBox"
+                         TextChanged="RngSeedBox_TextChanged"
+                         Effect="{DynamicResource MyShadow}"/>
+
+    
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+</UserControl>

@@ -1,4 +1,4 @@
-﻿namespace SFIiR.Modeling.Statistics;
+﻿namespace SFiIR.Modeling.Statistics;
 
 /// <summary>
 ///     Используется в <see cref="ProcessInfo"/> и <see cref="RequestInfo"/> для обозначения их состояния

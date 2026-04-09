@@ -1,4 +1,4 @@
-﻿namespace SFIiR.Random;
+﻿namespace SFiIR.Random;
 
 /// <summary>
 /// Статический класс для генерации случайных величин, 
@@ -23,7 +23,7 @@ public static class ExponentialDistribution
     /// <param name="lcg">Генератор псевдослучайных чисел.</param>
     /// <exception cref="ArgumentException">
     ///     Выбрасывается, если параметр <paramref name="lambda"/> не является положительным.
-    /// </exception> s
+    /// </exception>
     public static double Get(double lambda, LCG lcg)
     {
         if (lambda <= 0) throw new ArgumentException("Лямбда должна быть положительной");

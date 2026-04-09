@@ -1,0 +1,200 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:app="using:SFiIR.App"
+             xmlns:avalonia="using:ScottPlot.Avalonia"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
+             x:Class="SFiIR.App.SimulationVisualization.StatisticsControl">
+    
+    <TabControl>
+
+        <TabItem Header="Статистика">
+            <ScrollViewer>
+                <StackPanel Spacing="10"
+                            Margin="0, 5, 20, 0">
+                    
+                    <Border CornerRadius="10"
+                            BorderThickness="1"
+                            BorderBrush="{DynamicResource BaseMediumLowBrush}"
+                            Background="{DynamicResource RegionColorBrush}"
+                            Padding="5"
+                            Height="300"
+                            Margin="15, 10"
+                            Grid.Row="1">
+
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="25" 
+                                              OffsetX="1" 
+                                              OffsetY="2" 
+                                              Color="{DynamicResource ShadowHeavyColor}"/>
+                        </Border.Effect>
+
+                        <avalonia:AvaPlot x:Name="StatisticsGauge"/>
+                    </Border>
+
+                    <TextBlock Text="Статистика АСУ"
+                               x:Name="AcsStatisticsText"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               TextWrapping="Wrap"
+                               Margin="15, 5"
+                               IsVisible="True"/>
+                    
+                                        
+                    <Grid Margin="25, 0">
+                        <WrapPanel>
+                            <TextBlock Text="Выполнено заявок" 
+                                       FontSize="18" 
+                                       TextWrapping="Wrap"/>
+                            <TextBlock Text=":" 
+                                       FontSize="18" 
+                                       Margin="4,0"/>
+                            <TextBlock x:Name="CompletedRequestsText"
+                                       Text="null"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="{DynamicResource AccentBrush}"
+                                       TextWrapping="Wrap"
+                                       Margin="2,0"/>
+                            <TextBlock Text="/" 
+                                       FontSize="18" 
+                                       Margin="2,0"/>
+                            <TextBlock x:Name="AllRequestsText"
+                                       Text="null"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="{DynamicResource AccentBrush}"
+                                       TextWrapping="Wrap"
+                                       Margin="2,0"/>
+                        </WrapPanel>
+                    </Grid>
+
+                    <Grid Margin="25, 0">
+                        <WrapPanel>
+                            <TextBlock Text="Загруженность системы" 
+                                       FontSize="18" 
+                                       TextWrapping="Wrap"/>
+                            <TextBlock Text=":" 
+                                       FontSize="18" 
+                                       Margin="4,0"/>
+                            <TextBlock x:Name="WorkloadText"
+                                       Text="null"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="{DynamicResource AccentBrush}"
+                                       TextWrapping="Wrap"
+                                       Margin="2,0"/>
+                        </WrapPanel>
+                    </Grid>
+                    
+                    <Grid Margin="25, 0">
+                        <WrapPanel>
+                            <TextBlock Text="Среднее использования памяти" 
+                                       FontSize="18" 
+                                       TextWrapping="Wrap"/>
+                            <TextBlock Text=":" 
+                                       FontSize="18" 
+                                       Margin="4,0"/>
+                            <TextBlock x:Name="AverageMemoryUsageText"
+                                       Text="null"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="{DynamicResource AccentBrush}"
+                                       TextWrapping="Wrap"
+                                       Margin="2,0"/>
+                        </WrapPanel>
+                    </Grid>
+                    
+                    <Grid Margin="25, 0">
+                        <WrapPanel>
+                            <TextBlock Text="Средний процент выполнения заявки" 
+                                       FontSize="18" 
+                                       TextWrapping="Wrap"/>
+                            <TextBlock Text=":" 
+                                       FontSize="18" 
+                                       Margin="4,0"/>
+                            <TextBlock x:Name="AverageRequestCompletionPercentageText"
+                                       Text="null"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="{DynamicResource AccentBrush}"
+                                       TextWrapping="Wrap"
+                                       Margin="2,0"/>
+                        </WrapPanel>
+                    </Grid>
+
+                    <Grid Margin="25, 0">
+                        <WrapPanel>
+                            <TextBlock Text="Среднее время ожидания обработки заявок" 
+                                       TextWrapping="Wrap"
+                                       FontSize="18"/>
+                            <TextBlock Text=":" 
+                                       Margin="4,0"
+                                       FontSize="18"/>
+                            <TextBlock x:Name="AverageRequestQueueTimeText"
+                                       Text="null"
+                                       FontWeight="Bold"
+                                       Foreground="{DynamicResource AccentBrush}"
+                                       TextWrapping="Wrap"
+                                       Margin="2,0"
+                                       FontSize="18"/>
+                        </WrapPanel>
+                    </Grid>
+                
+                    <Grid Grid.ColumnDefinitions="*" Margin="25, 0">
+                        <WrapPanel>
+                            <TextBlock Text="Среднее время ожидания в очереди обработки"
+                                       FontSize="18"
+                                       TextWrapping="Wrap"
+                                       Margin="0,0,4,0" />
+                            
+                            <TextBlock Text="(только выполненные заявки)"
+                                       FontSize="18"
+                                       FontWeight="Light"
+                                       TextWrapping="Wrap" />
+                            
+                            <TextBlock Text=":"
+                                       FontSize="18"
+                                       Margin="0,0,4,0" />
+                            
+                            <TextBlock x:Name="AverageProcessQueueTimeText"
+                                       Text="null"
+                                       FontSize="18"
+                                       FontWeight="Bold"
+                                       Foreground="{DynamicResource AccentBrush}"
+                                       TextWrapping="Wrap" />
+                        </WrapPanel>
+                    </Grid>
+
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
+            
+        <TabItem Header="Все заявки">
+            <ScrollViewer>
+                <StackPanel Spacing="10"
+                            Margin="0, 5, 20, 0">
+                    
+                    <TextBlock Text="Информация о заявках"
+                               x:Name="RequestsInfoText"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               TextWrapping="Wrap"
+                               Margin="15, 5"
+                               IsVisible="True"/>
+                    
+                    <ItemsControl x:Name="CardsList">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
+    
+    </TabControl>
+</UserControl>

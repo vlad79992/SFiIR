@@ -1,9 +1,9 @@
 ﻿using ScottPlot;
 using ScottPlot.Plottables;
-using SFIiR.Random;
+using SFiIR.Random;
 using System.Security.Cryptography;
 
-namespace SFIiR;
+namespace SFiIR;
 
 public class GeneratePlot
 {

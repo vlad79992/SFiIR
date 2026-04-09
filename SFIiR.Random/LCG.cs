@@ -1,4 +1,4 @@
-﻿namespace SFIiR.Random;
+﻿namespace SFiIR.Random;
 
 /// <summary>
 /// Генератор псевдослучайных чисел, реализующий линейный конгруэнтный метод (LCG).
