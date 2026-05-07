@@ -21,7 +21,9 @@
       <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Npgsql" Version="10.0.2" />
     <PackageReference Include="ScottPlot.Avalonia" Version="5.1.58" />
+    <PackageReference Include="Tmds.DBus.Protocol" Version="0.93.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,11 +41,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="SimulationSettings\Tabs\OlapSettingsControl.axaml.cs">
+      <DependentUpon>OlapSettingsControl.axaml</DependentUpon>
+    </Compile>
     <Compile Update="SimulationVisualization\SimulationVisualizationsControl.axaml.cs">
       <DependentUpon>SimulationVisualizationsControl.axaml</DependentUpon>
     </Compile>
     <Compile Update="SimulationVisualization\Tabs\ChartControl.axaml.cs">
       <DependentUpon>ChartControl.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="SimulationVisualization\Tabs\OlapChangesControl.axaml.cs">
+      <DependentUpon>OlapChangesControl.axaml</DependentUpon>
     </Compile>
     <Compile Update="SimulationVisualization\Tabs\StatisticsControl.axaml.cs">
       <DependentUpon>StatisticsControl.axaml</DependentUpon>

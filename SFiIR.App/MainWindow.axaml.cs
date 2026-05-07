@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using HarfBuzzSharp;
 using System;
 
 namespace SFiIR.App
@@ -12,6 +13,8 @@ namespace SFiIR.App
 
             Settings.AdvancedSettings.Changed += AdvancedSettings_Changed;
             Settings.AdvancedSettings.FillButtonClicked += AdvancedSettings_FillButtonClicked;
+
+            Settings.OlapSettings.Changed += OlapSettings_Changed;
         }
 
         private void AdvancedSettings_FillButtonClicked(object? sender, EventArgs e)
@@ -31,7 +34,15 @@ namespace SFiIR.App
 
             AdvancedSettings_Changed(sender, e);
         }
+        private void OlapSettings_Changed(object? sender, EventArgs e)
+        {
+            var tab = Settings.OlapSettings;
 
+            Visualization.UpdateOlapVisualization(arrivalLambda: tab.ArrivalLambda, memLambda: tab.MemLambda,
+                                                     cpuLambda: tab.CpuLambda, arrivalTime: tab.ArrivalTime,
+                                                     testTime: tab.TestTime, maxMem: tab.MaxMem,
+                                                     cpuQuant: tab.CpuQuant, selectedParameter: tab.SelectedParameter);
+        }
         private void AdvancedSettings_Changed(object? sender, EventArgs e)
         {
             var tab = Settings.AdvancedSettings.ActiveTab;

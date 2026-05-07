@@ -7,6 +7,9 @@
   <Project Path="SFiIR.App/SFiIR.App.csproj" Id="ce2bb4de-114c-4acb-b7c7-54b4d581b440">
     <BuildType Solution="Debug logging|*" Project="Debug" />
   </Project>
-  <Project Path="SFIiR.Modeling/SFIiR.Modeling.csproj" DisplayName="SFiIR.Modeling" Id="e95e69ff-4454-416d-8b48-848f2111e8d9" />
-  <Project Path="SFIiR.Random/SFIiR.Random.csproj" DisplayName="SFiIR.Random" Id="6bc4d8ca-258d-473e-8c8d-3a518c3e3830" />
+  <Project Path="SFiIR.DbFill/SFiIR.DbFill.csproj" Id="eb39805d-7c91-440e-9208-868ce0fad0c1">
+    <BuildType Solution="Debug logging|*" Project="Debug" />
+  </Project>
+  <Project Path="SFIiR.Modeling/SFIiR.Modeling.csproj" Id="e95e69ff-4454-416d-8b48-848f2111e8d9" />
+  <Project Path="SFIiR.Random/SFIiR.Random.csproj" Id="6bc4d8ca-258d-473e-8c8d-3a518c3e3830" />
 </Solution>

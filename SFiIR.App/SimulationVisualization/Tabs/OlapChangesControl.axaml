@@ -1,0 +1,111 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:avalonia="using:ScottPlot.Avalonia"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SFiIR.App.OlapChangesControl">
+  
+    <UserControl.Styles>
+		<Style Selector="ToggleButton">
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>
+        <Style Selector="ToggleButton:checked">
+            <Setter Property="CornerRadius" Value="10, 10, 0, 0" />
+        </Style>
+    </UserControl.Styles>
+    
+    <Grid>
+        <Border CornerRadius="10"
+                BorderThickness="1"
+                BorderBrush="{DynamicResource BaseMediumLowBrush}"
+                Background="{DynamicResource RegionColorBrush}"
+                Padding="20, 5, 5, 5"
+                Margin="15">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="25" 
+                                  OffsetX="1" 
+                                  OffsetY="2" 
+                                  Color="{DynamicResource ShadowHeavyColor}"/>
+            </Border.Effect>
+            
+            <avalonia:AvaPlot x:Name="Chart"/>
+        </Border>
+
+        <ToggleButton x:Name="DropdownToggle"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left"
+                      Padding="8 8"
+                      Margin="15"
+                      BorderThickness="1"
+                      BorderBrush="{DynamicResource BaseMediumLowBrush}">
+            <ToggleButton.Effect>
+				<DropShadowEffect BlurRadius="10" 
+                      OffsetX="5" OffsetY="5" 
+                      Color="{DynamicResource ShadowColor}"/>
+            </ToggleButton.Effect>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <PathIcon Data="{StaticResource MenuIcon}" 
+                          Width="16" Height="16"
+                          IsVisible="{Binding !IsChecked, ElementName=DropdownToggle}"/>
+                
+                <PathIcon Data="{StaticResource CloseIcon}" 
+                          Width="16" Height="16"
+                          IsVisible="{Binding IsChecked, ElementName=DropdownToggle}"/>
+            </Grid>
+        </ToggleButton>
+
+        <Popup x:Name="DropdownPopup"
+               PlacementTarget="{Binding #DropdownToggle}"
+               Placement="BottomEdgeAlignedLeft"
+               IsOpen="{Binding IsChecked, ElementName=DropdownToggle}"
+               IsLightDismissEnabled="True"
+               Closed="DropdownPopup_Closed"
+               MinWidth="{Binding Bounds.Width, ElementName=DropdownToggle}">
+            
+            <Border Background="{DynamicResource ListMediumBrush}"
+                    CornerRadius="0, 10, 10, 10"
+                    Padding="8"
+                    Margin="0, 0, 20, 20"
+                    BorderThickness="1"
+                    BorderBrush="{DynamicResource BaseMediumLowBrush}">
+                <Border.Effect>
+					<DropShadowEffect BlurRadius="10" 
+                              OffsetX="5" 
+                              OffsetY="5" 
+                              Color="{DynamicResource ShadowColor}"/>
+                </Border.Effect>
+                
+                <StackPanel MinWidth="200" 
+                            Spacing="8">
+                    
+                    <CheckBox x:Name="CompletedRequests" 
+                              IsCheckedChanged="CheckBoxChanged"
+                              Content="Выполнено заявок" 
+                              IsChecked="True"/>
+                    <CheckBox x:Name="Workload" 
+                              IsCheckedChanged="CheckBoxChanged"
+                              Content="Загруженность" 
+                              IsChecked="True"/>
+                    <CheckBox x:Name="AverageMemoryUsage" 
+                              IsCheckedChanged="CheckBoxChanged"
+                              Content="Ср. использование памяти" 
+                              IsChecked="True"/>
+                    <CheckBox x:Name="AverageRequestCompletion" 
+                              IsCheckedChanged="CheckBoxChanged"
+                              Content="Ср. выполнение заявок" 
+                              IsChecked="True"/>
+                    <CheckBox x:Name="AverageRequestQueueTime" 
+                              IsCheckedChanged="CheckBoxChanged"
+                              Content="Ср. время ожидания обработки" 
+                              IsChecked="True"/>
+                    <CheckBox x:Name="AverageProcessQueueTime" 
+                              IsCheckedChanged="CheckBoxChanged"
+                              Content="Ср. время ожидания в очереди выполнения" 
+                              IsChecked="True"/>
+                    
+                </StackPanel>
+            </Border>
+        </Popup>
+    </Grid>
+</UserControl>

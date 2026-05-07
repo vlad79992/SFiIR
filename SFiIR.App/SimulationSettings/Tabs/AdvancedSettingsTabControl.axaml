@@ -83,7 +83,12 @@
                      TextChanged="ArrivalLambdaBox_TextChanged"
                      Effect="{DynamicResource MyShadow}"
                      Margin="10, 0, 30, 10"/>
-            
+            <TextBlock Margin="10 5" 
+                       Text="Лямбда прибытия:"
+                       Foreground="Red"
+                       IsVisible="False"
+                       x:Name="ArrivalLambdaError"/> 
+
             <TextBlock Margin="10 5"
                        Text="Лямбда памяти:"
                        x:Name="MemLambdaText"/>
@@ -91,7 +96,12 @@
                      TextChanged="MemLambdaBox_TextChanged"
                      Effect="{DynamicResource MyShadow}"
                      Margin="10, 0, 30, 10"/>
-            
+            <TextBlock Margin="10 5" 
+                       Text="Лямбда прибытия:"
+                       Foreground="Red"
+                       IsVisible="False"
+                       x:Name="MemlLambdaError"/> 
+
             <TextBlock Margin="10 5"
                        Text="Лямбда CPU:"
                        x:Name="CpuLambdaText"/>
@@ -99,7 +109,12 @@
                      TextChanged="CpuLambdaBox_TextChanged"
                      Effect="{DynamicResource MyShadow}"
                      Margin="10, 0, 30, 10"/>
-            
+            <TextBlock Margin="10 5" 
+                       Text="Лямбда прибытия:"
+                       Foreground="Red"
+                       IsVisible="False"
+                       x:Name="CpuLambdaError"/> 
+
             <TextBlock Margin="10 5"
                        Text="Время прибытия заявок:"
                        x:Name="ArrivalTimeText"/>
@@ -107,6 +122,11 @@
                      TextChanged="ArrivalTimeBox_TextChanged"
                      Effect="{DynamicResource MyShadow}"
                      Margin="10, 0, 30, 10"/>
+            <TextBlock Margin="10 5" 
+                       Text="Лямбда прибытия:"
+                       Foreground="Red"
+                       IsVisible="False"
+                       x:Name="ArrivalTimeError"/> 
             
             <TextBlock Margin="10 5" 
                        Text="Время теста:"
@@ -115,7 +135,12 @@
                      TextChanged="TestTimeBox_TextChanged"
                      Effect="{DynamicResource MyShadow}"
                      Margin="10, 0, 30, 10"/>
-            
+            <TextBlock Margin="10 5" 
+                       Text="Лямбда прибытия:"
+                       Foreground="Red"
+                       IsVisible="False"
+                       x:Name="TestTimeError"/> 
+
             <TextBlock Margin="10 5" 
                        Text="Количество памяти:"
                        x:Name="MaxMemText"/>
@@ -123,6 +148,11 @@
                      TextChanged="MaxMemBox_TextChanged"
                      Effect="{DynamicResource MyShadow}"
                      Margin="10"/>
+            <TextBlock Margin="10 5" 
+                       Text="Лямбда прибытия:"
+                       Foreground="Red"
+                       IsVisible="False"
+                       x:Name="MaxMemError"/> 
             
             <TextBlock Margin="10 5" 
                        Text="Время выполнения процесса:"
@@ -131,7 +161,12 @@
                      TextChanged="CpuQuantBox_TextChanged"
                      Effect="{DynamicResource MyShadow}"
                      Margin="10, 0, 30, 10"/>
-            
+           <TextBlock Margin="10 5" 
+                       Text="Лямбда прибытия:"
+                       Foreground="Red"
+                       IsVisible="False"
+                       x:Name="CpuQuantError"/> 
+ 
             <TextBlock Margin="10 5" 
                        Text="seed:"
                        x:Name="RngSeedText"/>
@@ -139,7 +174,12 @@
                      TextChanged="RngSeedBox_TextChanged"
                      Effect="{DynamicResource MyShadow}"
                      Margin="10, 0, 30, 10"/>
-        
+            <TextBlock Margin="10 5" 
+                       Text="Лямбда прибытия:"
+                       Foreground="Red"
+                       IsVisible="False"
+                       x:Name="RngSeedError"/>
+
         </StackPanel>
     </ScrollViewer>
 </UserControl>

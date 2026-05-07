@@ -23,5 +23,9 @@
                 <local:StatisticsChangesControl
                 x:Name="Changes"/>
             </TabItem>
+      <TabItem Header="OLAP" FontSize="18">
+                <local:OlapChangesControl
+                x:Name="Olap"/>
+            </TabItem>
         </TabControl>
 </UserControl>

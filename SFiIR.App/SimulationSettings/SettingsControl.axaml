@@ -23,6 +23,10 @@
                 <simulationsettings:AdvancedSettingsControl
                 x:Name="AdvancedSettings"/>
             </TabItem>
+            <TabItem Header="OLAP">
+                <simulationsettings:OlapSettingsControl
+                x:Name="OlapSettings"/>
+            </TabItem>
         </TabControl>
     </Grid>
 
